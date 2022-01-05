@@ -29,3 +29,32 @@ Output: 40320
 ```
 <br>
 <hr>
+
+<br>
+
+## First Reverse 
+<br>
+Have the function FirstReverse(str) take the str parameter being passed and return the string in reversed order.
+<br>
+ For example: if the input string is "Hello World and Coders" then your program should return the string sredoC dna dlroW olleH.
+
+
+<br>
+
+Examples
+
+```
+
+Input: "coderbyte"
+
+Output: etybredoc
+
+
+
+Input: "I Love Code"
+
+Output: edoC evoL I
+
+```
+<br>
+<hr>
