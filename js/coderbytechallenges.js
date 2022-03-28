@@ -110,13 +110,134 @@ replace(/\s/g, ""); // virgülden önceki tüm boşlukları boş bir dize ile de
 
 
 
+ // ******** Questions Marks ********
+
+function QuestionsMarks(str) { 
+    result = false;
+
+    for(let i = 0; i < str.length; i++){
+        for(let x = i+1; x < str.length; x++){
+         
+            if(Number(str[i]) + Number(str[x]) === 10){              
+                result = true;
+
+                if(str.slice(i, x).split("?").length -1 != 3){
+                  return false;
+
+                // veya 
+                //if(str.slice(i,x).split("?").length -1 < 3){  
+                // dikkat => "<3"
+                }
+            }
+        }
+    }
+    return result;
+}
+console.log(QuestionsMarks("arrb6???4xxbl5???eee5")) // true
+console.log(QuestionsMarks("arrb6?4xxbl5?eee5")) // false
+console.log(QuestionsMarks("acc?7??sss?3rr1??????5")) // true
+console.log(QuestionsMarks("aa6?9")) // false
 
 
 
 
 
+// ******** Prime Time ********
+
+function PrimeTime(num){
+
+    if(num < 2){
+        return false
+    }
+    
+    if(num === 2){
+        return true;
+    }
+    
+    if(num % 2 === 0){
+    return false;
+    } 
+    
+    // for(let i = 2; i < num; i++){
+    //     if(num % i === 0){
+    //         return false;
+    //     }
+    // }
+    
+    return true;
+    }
+    console.log(PrimeTime(19)) // true
+    console.log(PrimeTime(110)) // false
+    console.log(PrimeTime(2)) // true
 
 
+// ***** Method: 2
+function PrimeTime(num){
+
+    if(num < 2 ){
+        return false;
+    }
+    
+    for(let i = 2; i < num; i++){
+        if(num % i === 0){
+            return false;
+        }
+    }
+    
+    return true;
+    }
+    console.log(PrimeTime(19)) // true
+    console.log(PrimeTime(110)) // false
+    console.log(PrimeTime(2)) // true
+
+
+
+
+// ******** Consonant Count  ********
+
+function ConsonantCount(str){
+
+    // let vowel = "aeiouAEIOU"
+    let Cons = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    let result = []
+
+for (let i = 0; i < str.length; i++){
+     for(let x = 0; x < Cons.length; x++){
+         if (str[i] === Cons[x]) {
+            result.push(str[i])
+            console.log(result)
+         }
+     }
+}
+return result.length;
+
+};
+console.log(ConsonantCount("Hello World")) // 7 
+console.log(ConsonantCount("Alphabets")) // 6 
+console.log(ConsonantCount("Sessiz Sessiz")) // 8 
+
+
+// ******* Method: 2 
+
+function ConsonantCount(str){
+
+    let count = 0
+    let Cons = "bcdfghjklmnpqrstvwxyz"
+
+for (let i = 0; i < str.length; i++){
+        if(Cons.indexOf(str[i].toLowerCase()) > -1){
+            count++;
+        }
+     }
+return count;
+};
+console.log(ConsonantCount("Hello World")) // 7 
+console.log(ConsonantCount("Alphabets")) // 6 
+console.log(ConsonantCount("Sessiz Sessiz")) // 8 
+
+//Note: 
+Cons.indexOf(str[i].toLowerCase()) > -1
+// -1'den büyük olanları getir dedim çünkü "Cons" ile eşleşmeyenleri -1 olarak getirecek, ben de direkt -1'den büyük olanları getir didim...
 
 
 
