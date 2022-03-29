@@ -158,12 +158,6 @@ function PrimeTime(num){
     return false;
     } 
     
-    // for(let i = 2; i < num; i++){
-    //     if(num % i === 0){
-    //         return false;
-    //     }
-    // }
-    
     return true;
     }
     console.log(PrimeTime(19)) // true
@@ -238,6 +232,92 @@ console.log(ConsonantCount("Sessiz Sessiz")) // 8
 //Note: 
 Cons.indexOf(str[i].toLowerCase()) > -1
 // -1'den büyük olanları getir dedim çünkü "Cons" ile eşleşmeyenleri -1 olarak getirecek, ben de direkt -1'den büyük olanları getir didim...
+
+
+
+
+// ******** Consonant Count  ********
+
+function CheckNums(num1, num2){
+
+    if(num2 > num1){
+        return true;
+    } else if(num1 == num2) {
+        return -1
+    } else{
+        return false;
+    }
+}
+console.log(CheckNums(3, 122)) // true
+console.log(CheckNums(67, 67)) // -1
+console.log(CheckNums(3, 1)) // false
+
+
+
+
+// ******** Palindrome Two ********
+
+function PalindromeTwo(str){
+    let String = "aeioubcdfghjklmnpqrstvwxyzAEIOUBCDFGHJKLMNPQRSTVWXYZ"
+    let result = []
+
+    for(let i = 0; i < str.length; i++){
+        for(let x = 0; x < String.length; x++){
+            if(str[i] == String[x]){
+                result.push(str[i])
+            }
+        }
+    }
+
+result = result.join("").toLowerCase()
+// console.log("result:", result) // result: helloworld
+
+let reverse = result.split("").reverse().join("")
+// console.log("reverse:", reverse) // reverse: dlrowolleh
+
+if(result == reverse){
+    return true;
+} else  return false;
+
+};
+
+console.log(PalindromeTwo("Noel - sees Leon")) // true
+console.log(PalindromeTwo("A war at Tarawa!")) // true
+console.log(PalindromeTwo("Hello World")) // true
+
+
+//Note: Nasıl? Uzattıkça uzatmışım dimi :D... Sıkıntılı bir anıma denk geldi, bir ara kısa yolunu da yazarık...
+
+
+// ******** Method - 2:
+
+function PalindromeTwo(str){
+    let re = /[a-zA-Z]/ // aA'dan zZ'ye kontrol et (Harf dışında başka bir şey içermez)
+    let arr = [];
+
+    for (let i = 0; i < str.length; i++){
+        if(str.charAt(i).match(re)){ // str'yi regex ile eşleştiriyorum ve içindekileri arr'ye atacağum, böylece harf dışındaki karakterler gelmeyecek
+        arr.push(str.charAt(i).toLowerCase())
+        }
+    }
+    
+    let x = arr.join("") // A ve Z harici değerleri "=?!_#" gibi almadık ve join ile aldıklarımı birleştiriyorum
+    console.log(arr) // ["k","u","l","l","u","k"] => idü
+    console.log(x) // kulluk => oldu
+
+    arrjoin = arr.reverse().join("")
+    console.log("arrjoin:",arrjoin) // kulluk (Tersi :D)
+
+    if(arrjoin == x){
+        return true;
+    } else {
+        return false;
+    }
+};
+console.log(PalindromeTwo("Kulluk!#?")) // true
+console.log(PalindromeTwo("Kulluks!!?")) // false
+console.log(PalindromeTwo("A war at Tarawa!")) // true
+console.log(PalindromeTwo("Hello World")) // true
 
 
 
