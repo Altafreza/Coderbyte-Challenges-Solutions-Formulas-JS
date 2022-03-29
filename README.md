@@ -187,4 +187,51 @@ Output: 6
 ```
 <br>
 <hr>
+<br>
 
+## Check Nums
+<br>
+
+Have the function CheckNums(num1,num2) take both parameters being passed and return the string true if num2 is greater than num1, otherwise return the string false. If the parameter values are equal to each other then return the string -1.
+
+<br>
+
+Examples
+
+```
+
+Input: 3 & num2 = 122
+Output: true
+
+
+Input: 67 & num2 = 67
+Output: -1
+
+```
+<br>
+<hr>
+<br>
+
+## Palindrome Two
+<br>
+
+Have the function PalindromeTwo(str) take the str parameter being passed and return the string true if the parameter is a palindrome, (the string is the same forward as it is backward) otherwise return the string false. The parameter entered may have punctuation and symbols but they should not affect whether the string is in fact a palindrome. 
+
+For example: "Anne, I vote more cars race Rome-to-Vienna" should return true.
+
+<br>
+
+Examples
+
+```
+
+Input: "Noel - sees leon"
+Output: true
+
+
+Input: "A war at Tarawa!"
+Output: true
+
+```
+<br>
+<hr>
