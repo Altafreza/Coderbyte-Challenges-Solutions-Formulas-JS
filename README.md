@@ -1,5 +1,5 @@
 #  <strong> Coderbyte Challenges, Solutions and Formulas
-
+![Coderbyte](https://media.giphy.com/media/AhjXalGPAfJg4/giphy.gif)
 
 <br>
 
