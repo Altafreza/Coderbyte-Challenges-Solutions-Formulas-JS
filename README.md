@@ -1,4 +1,4 @@
-#  <strong> Coderbyte-Challenges
+#  <strong> Coderbyte Challenges, Solutions and Formulas
 
 
 <br>
