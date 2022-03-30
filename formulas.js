@@ -91,11 +91,40 @@ console.log("reverse:", numbers2Reverse); // reverse: (4) [8, 6, 5, 3]
 
 let line = ["a", "b", "c", "d", "e"]
 
-let numbers2CharAt = line.at(-2);
+let lineCharAt = line.at(-2);
 console.log("at:", numbers2CharAt); // at: d
 
-let numbers2CharAt2 = line.at(2);
+let lineCharAt2 = line.at(2);
 console.log("at:", numbers2CharAt2); // at: c
+
+let myName =  "Ali Kartal"
+
+let lineLast = myName.lastIndexOf("a")
+console.log("last:", myName)
+
+
+
+let myName =  "Ali Kartal"
+
+let lineLast = myName.lastIndexOf("a")
+console.log("last:", lineLast); // last: 8
+
+let lineSearch = myName.search("Kar")
+console.log("search:", lineSearch); // search: 4
+
+let lineReplace = myName.replace("Ali", "Aliço")
+console.log("replace:", lineReplace); // replace: Aliço Kartal
+
+let lineSplit = myName.split("")
+console.log("split:", lineSplit); // split: (10) ['A', 'l', 'i', ' ', 'K', 'a', 'r', 't', 'a', 'l']
+
+let newName = "Dean,Winchester"
+
+let newNameSplit = newName.split(",")
+console.log("split2:", newNameSplit); // split2: (2) ['Dean', 'Winchester']
+
+
+
 
 
 
