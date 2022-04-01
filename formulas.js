@@ -100,13 +100,6 @@ console.log("at:", numbers2CharAt2); // at: c
 let myName =  "Ali Kartal"
 
 let lineLast = myName.lastIndexOf("a")
-console.log("last:", myName)
-
-
-
-let myName =  "Ali Kartal"
-
-let lineLast = myName.lastIndexOf("a")
 console.log("last:", lineLast); // last: 8
 
 let lineSearch = myName.search("Kar")
@@ -151,7 +144,7 @@ console.log("concat:",cat); // concat: (10) [1, 2, 3, 4, 5, 1, 3, 5, 7, 9]
 let catSort = cat.sort((a,b) => b-a);
 console.log("sort", catSort); // sort (10) [9, 7, 5, 5, 4, 3, 3, 2, 1, 1]
 
-let result = catSort.find(x => x > catSort[2])
+let result = catSort.find(x => x > catSort[1])
 console.log("find:", result); // find: 9
 
 // Cevap olarak 9'u bulmuş olduk. Find methodu bulduğu ilk sonucu döndürür. Başka sonuç da yok zaten :)
