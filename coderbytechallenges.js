@@ -320,5 +320,65 @@ console.log(PalindromeTwo("A war at Tarawa!")) // true
 console.log(PalindromeTwo("Hello World")) // true
 
 
+// ******** Ex Oh ********
+
+function ExOh(str) {
+
+    let x = []
+    let o = []
+
+    for (i = 0; i < str.length; i++){
+        if (str[i] === "x") {
+            x.push(str[i])
+        } else if(str[i] === "o"){
+            o.push(str[i])
+        }
+    }
+
+    if(x.length === o.length){
+        return true;
+    } else return false;
+
+
+
+
+};
+console.log(ExOh("xooxxo")) // true
+console.log(ExOh("x")) // false
+console.log(ExOh("xooxxxxooxo" )) // false
+
+
+
+
+// ******** Consecutive ********
+
+// Minik Hatırlatma:
+// let x = [5,10,15]
+// console.log("x:",x[0]) // x: 5
+// console.log("x:",x[x.length-1]) // x: 15
+
+
+function Consecutive(arr){
+ 
+    let res = []  
+
+    // önce arr'yi güçükten büyüğe sıralayalum
+    let sortNumbers = arr.sort((a,b) => a-b)
+
+    // daha sonra sıraladıklarımızı for ile getirelim
+    // Birinci index'ten başlasın, son index'e kadar olan sayıları bir getirsin bize
+    // daha sonra da o sayıları "res" değişkenimize paketleyelim
+    for (let i = sortNumbers[0]; i <= sortNumbers[sortNumbers.length-1]; i++){
+        res.push(i)
+    }
+
+    // gerisi zaten easy peasy
+    return res.length - arr.length;
+
+}
+console.log("result:",Consecutive([5,10,15])) // 8 
+console.log("result:",Consecutive([-2,10,4])) // 10 
+console.log("result:",Consecutive([4, 8, 6])) // 2 
+
 
 
