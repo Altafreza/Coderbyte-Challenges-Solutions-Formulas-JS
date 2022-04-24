@@ -283,7 +283,7 @@ if(result == reverse){
 
 console.log(PalindromeTwo("Noel - sees Leon")) // true
 console.log(PalindromeTwo("A war at Tarawa!")) // true
-console.log(PalindromeTwo("Hello World")) // true
+console.log(PalindromeTwo("Hello World")) // false
 
 
 //Note: Nasıl? Uzattıkça uzatmışım dimi :D... Sıkıntılı bir anıma denk geldi, bir ara kısa yolunu da yazarık...
@@ -317,7 +317,7 @@ function PalindromeTwo(str){
 console.log(PalindromeTwo("Kulluk!#?")) // true
 console.log(PalindromeTwo("Kulluks!!?")) // false
 console.log(PalindromeTwo("A war at Tarawa!")) // true
-console.log(PalindromeTwo("Hello World")) // true
+console.log(PalindromeTwo("Hello World")) // false
 
 
 // ******** Ex Oh ********
