@@ -773,4 +773,50 @@ console.log(NearestSmallerValues([5, 3, 1, 9, 7, 3, 4, 1])) // -1 -1 -1 1 1 1 3 
 
 
 
+// ********  Largest Four  ********
+
+function LargestFour(arr) {
+
+    let largestFour = []
+    let result = []
+
+    let arrSort = arr.sort((a, b) => b - a)
+    console.log("arrSort:", arrSort)
+    // arrSort: (4) [1, 1, 1, -5]
+    // arrSort: (6) [7, 3, 2, 1, 0, 0]
+    // arrSort: (8) [6, 6, 5, 4, 3, 2, 1, -2]
+
+
+    //{bu for döngüsünü kofi içtikten sonra düzelttim,
+    // yürümeyi seviyorum diye sanırım yolları uzatmakta üstüme yok :D...}
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // for (let i = 0; i < 1; i++) {
+    //     // largestFour.push(arrSort.find(x => x == arrSort[0]))
+    //     // largestFour.push(arrSort.find(x => x == arrSort[1]))
+    //     // largestFour.push(arrSort.find(x => x == arrSort[2]))
+    //     // largestFour.push(arrSort.find(x => x == arrSort[3]))
+    //     console.log("largestFour:",largestFour)
+    //     // largestFour: (4) [1, 1, 1, -5]
+    //     // largestFour: (4) [7, 3, 2, 1]
+    //     // largestFour: (4) [6, 6, 5, 4]
+    // }
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    if (arrSort.length < 5) { // length 5'ten küçükse hepisini topla
+        result.push(arrSort.reduce((a, b) => a + b))
+    } else {
+        largestFour.push(arrSort[0] + arrSort[1] + arrSort[2] + arrSort[3])
+        result.push(largestFour.reduce((a, b) => a + b))
+    }
+
+    return result.toString();
+}
+console.log(LargestFour([1, 1, 1, -5])) // -2
+console.log(LargestFour([0, 0, 2, 3, 7, 1])) // 13
+console.log(LargestFour([4, 5, -2, 3, 1, 2, 6, 6])) // 21
+
+
+
+
+
 
