@@ -464,29 +464,29 @@ function ThreeFiveMultiples(num) {
     var arr = [];
     var sum = 0;
 
-//    for(var i = num - 1; i > 1; i--){
-//         if(i % 5 === 0 || i % 3 === 0) {
-//             arr.push(i);
-//             console.log("arr:",arr)
-//         }
-//     }
+    //    for(var i = num - 1; i > 1; i--){
+    //         if(i % 5 === 0 || i % 3 === 0) {
+    //             arr.push(i);
+    //             console.log("arr:",arr)
+    //         }
+    //     }
 
-for(var i = 0; i < num; i++){
-    if(i % 5 === 0 || i % 3 === 0) {
-        arr.push(i);
-    //    console.log("arr:",arr)
-    //    arr: [0]
-    //         [0, 3]
-    //         [0, 3, 5]
+    for (var i = 0; i < num; i++) {
+        if (i % 5 === 0 || i % 3 === 0) {
+            arr.push(i);
+            //    console.log("arr:",arr)
+            //    arr: [0]
+            //         [0, 3]
+            //         [0, 3, 5]
+        }
     }
-}
 
-    for(var i = 0; i < arr.length; i++){
-       sum = sum + arr[i];
-    //   console.log("sum:",sum)
-    //   sum: 0
-    //   sum: 3
-    //   sum: 8
+    for (var i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+        //   console.log("sum:",sum)
+        //   sum: 0
+        //   sum: 3
+        //   sum: 8
     }
 
     return sum;
@@ -499,6 +499,57 @@ console.log(ThreeFiveMultiples(1)); // 0
 
 
 
+// ******** Power Set Count ********
+
+function PowerSetCount(arr) {
+
+    let result = Math.pow(2, arr.length)
+    return result;
+
+}
+console.log(PowerSetCount([5, 6])) // 4
+console.log(PowerSetCount([1, 2, 3])) // 8
+console.log(PowerSetCount([1, 2, 3, 4])) // 16
+
+// Shall we show you the power set too ? ? ? 
+function PowerSet(arr) {
+
+    let result = []
+
+    // Power Set'in içereceği toplam Set sayısı
+    let total = Math.pow(2, arr.length);
+    // console.log("total:",total) // total: 16 > (PowerSetCount'ın cevabı: 2**n)
+
+    // 0 - 2**n'e kadar her bir değer arasında döngü
+    for (let i = 0; i < total; i++) {
+
+        let resultSet = [];
+        // Power Set'e eklediğimiz kümemiz
+
+        let num = i.toString(2) // tam sayıyı ikiliye çevirecek
+        // console.log("num:",num) // 0 1 10 11 100 101 110 111 1000 1001 1010 1011 1100 1101 1110 1111
+
+        //ikili sayıyı doldur, böylece 1 örneğin 001 olucek
+        while (num.length < arr.length) {
+            num = "0" + num;
+        }
+
+        // ikili sayıdaki 1"lerle eşleşen kümeyi oluştur
+        for (let x = 0; x < num.length; x++) {
+            if (num[x] === "1") {
+                resultSet.push(arr[x])
+            }
+        }
+        result.push(resultSet);
+        // console.log("resultSet:",resultSet) 
+        // [] [4] [3] [3,4] [2] [2, 4] [2, 3] [2, 3, 4] [1] [1, 4] [1, 3] [1, 3, 4] [1, 2]  [1, 2, 4] [1, 2, 3] [1, 2, 3, 4]
+
+        //şimcik bu seti sonucumuza ekleyelüm 
+    }
+
+    return result;
+};
+console.log(PowerSet([1, 2, 3, 4]))
 
 
 
@@ -506,6 +557,4 @@ console.log(ThreeFiveMultiples(1)); // 0
 
 
 
-
-
-
+// ********  ********
