@@ -692,7 +692,60 @@ console.log(FibonacciChecker(54)) // no
 
 
 
+// Method - 2 ( "Sorry for mess :)" )
 
+function FibonacciChecker(num, a=0, b=1) {
+
+    if( num === 0 || num === 1){
+        return "yes";
+    }
+
+    let nextNumber = a+b;
+
+    // example : FibonacciChecker(5)
+    console.log("a+b=",a, "+", b)
+    // a+b= 0 + 1
+    // a+b= 1 + 1
+    // a+b= 1 + 2
+    // a+b= 2 + 3
+
+    // FibonacciChecker(5) => console.log("nextNumber:",nextNumber) // 1 2 3 5 
+    // FibonacciChecker(6) => console.log("nextNumber:",nextNumber) // 1 2 3 5 8
+
+    if(nextNumber === num){
+        return "yes";
+    }
+    else if (nextNumber > num){
+        return "no";
+    }
+
+    return FibonacciChecker(num, b, nextNumber)
+};
+console.log(FibonacciChecker(5)) // yes
+console.log(FibonacciChecker(6)) // no
+console.log(FibonacciChecker(34)) // yes
+console.log(FibonacciChecker(54)) // no
+
+
+
+
+
+
+
+// ******** Number Reverse ********
+function NumberReverse(str) {
+
+    return str.toString().split(" ").reverse().join(" ")
+
+}
+console.log(NumberReverse("1 2 3")) // 3 2 1
+console.log(NumberReverse("10 20 50")) // 50 20 10
+
+
+
+
+
+// ********  ********
 
 
 
