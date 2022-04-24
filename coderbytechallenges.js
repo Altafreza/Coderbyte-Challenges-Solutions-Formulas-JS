@@ -630,14 +630,39 @@ console.log(SimpleEvens(208646464652)) // false
 
 
 
+// ********  Happy Numbers  ********
+
+function HappyNumber(num) {
+
+    let single = num.toString().split("").map(m => m ** 2)
+    console.log(single)
+    // HappyNumber(1) => [1]
+    // HappyNumber(10) => (2) [1, 0]
+    // HappyNumber(20) => (2) [4, 0]
+    // HappyNumber(22) => (2) [4, 4]
+    // HappyNumber(101) => (3) [1, 0, 1]
+
+    let arr = single.reduce(
+        (a, b) => a + b
+        );
+
+    if (arr == 1) {
+        return true
+    } else {
+        return false
+    }
+
+};
+console.log(HappyNumber(1)) // true
+console.log(HappyNumber(10)) // true
+console.log(HappyNumber(20)) // false
+console.log(HappyNumber(22)) // false
+console.log(HappyNumber(101)) // false
+
+
+
+
+
+
 // ********   ********
-
-
-
-
-
-
-
-
-
 
