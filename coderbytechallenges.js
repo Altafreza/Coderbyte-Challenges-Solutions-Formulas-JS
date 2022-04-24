@@ -644,7 +644,7 @@ function HappyNumber(num) {
 
     let arr = single.reduce(
         (a, b) => a + b
-        );
+    );
 
     if (arr == 1) {
         return true
@@ -692,18 +692,18 @@ console.log(FibonacciChecker(54)) // no
 
 
 
-// Method - 2 ( "Sorry for mess :)" )
+// Method - 2 ( "Sorry for the mess :)" )
 
-function FibonacciChecker(num, a=0, b=1) {
+function FibonacciChecker(num, a = 0, b = 1) {
 
-    if( num === 0 || num === 1){
+    if (num === 0 || num === 1) {
         return "yes";
     }
 
-    let nextNumber = a+b;
+    let nextNumber = a + b;
 
     // example : FibonacciChecker(5)
-    console.log("a+b=",a, "+", b)
+    console.log("a+b=", a, "+", b)
     // a+b= 0 + 1
     // a+b= 1 + 1
     // a+b= 1 + 2
@@ -712,10 +712,10 @@ function FibonacciChecker(num, a=0, b=1) {
     // FibonacciChecker(5) => console.log("nextNumber:",nextNumber) // 1 2 3 5 
     // FibonacciChecker(6) => console.log("nextNumber:",nextNumber) // 1 2 3 5 8
 
-    if(nextNumber === num){
+    if (nextNumber === num) {
         return "yes";
     }
-    else if (nextNumber > num){
+    else if (nextNumber > num) {
         return "no";
     }
 
@@ -745,8 +745,29 @@ console.log(NumberReverse("10 20 50")) // 50 20 10
 
 
 
-// ********  ********
+// ******** Nearest Smaller Values ********
+function NearestSmallerValues(arr) {
 
+    let result = []
+
+    for (let i = 0; i < arr.length; i++) {
+        for (x = i - 1; x >= 0; x--) {
+            if (arr[x] <= arr[i]) {
+                result.push(arr[x])
+                break;
+            }
+        }
+
+        if (x == -1) {
+            result.push(-1)
+        }
+    }
+    return result.join(" ")
+
+};
+console.log(NearestSmallerValues([5, 2, 8, 3, 9, 12])) // [-1, -1, 2, 2, 3, 9] => -1 -1 2 2 3 9
+console.log(NearestSmallerValues([2, 4, 5, 1, 7])) // -1 2 4 -1 1
+console.log(NearestSmallerValues([5, 3, 1, 9, 7, 3, 4, 1])) // -1 -1 -1 1 1 1 3 1
 
 
 
