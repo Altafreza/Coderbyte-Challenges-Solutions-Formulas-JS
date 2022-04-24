@@ -929,7 +929,32 @@ console.log(MathChallenge(8, 8)) // 8
 
 
 
+// ********  Array Challenge  ********
+function ArrayChallenge(arr) {
 
+    let res = []
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let x = i + 1; x < arr.length; x++) {
+            if (arr[i] === arr[x]) {
+                res.push(arr[i])
+            }
+        }
+    }
+
+    if (res.length === 0) {
+        return -1
+    } else {
+        return res[0]
+    }
+
+}
+console.log(ArrayChallenge([5, 5, 2, 2, 1])) // 5
+console.log(ArrayChallenge([3, 4, 1, 6, 10])) // -1
+console.log(ArrayChallenge([5, 10, 10, 6, 5])) // 5
+console.log(ArrayChallenge([10, 4, 5, 2, 4])) // 4
+console.log(ArrayChallenge([10, 9, 8, 7, 6])) // -1
+console.log(ArrayChallenge([2, 9, 9, 8, 2])) // 2
 
 
 
