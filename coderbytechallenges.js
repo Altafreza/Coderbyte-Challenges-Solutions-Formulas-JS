@@ -664,5 +664,39 @@ console.log(HappyNumber(101)) // false
 
 
 
-// ********   ********
+// ******** Fibonacci Checker  ********
+
+function FibonacciChecker(num) {
+
+    let arr = [];
+    let res;
+
+    for (let i = 0; ; i++) {
+        arr.push(i < 2 ? i : arr[i - 2] + arr[i - 1]) //Fibonacci
+        if (arr[i] === num) {
+            res = "yes";
+            break;
+        }
+        if (arr[i] > num) {
+            res = "no";
+            break;
+        }
+    }
+    return res;
+
+}
+console.log(FibonacciChecker(5)) // yes
+console.log(FibonacciChecker(34)) // yes
+console.log(FibonacciChecker(54)) // no
+
+
+
+
+
+
+
+
+
+
+
 
