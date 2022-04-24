@@ -554,7 +554,44 @@ console.log(PowerSet([1, 2, 3, 4]))
 
 
 
+// ******** Even Pairs ********
+
+function EvenPairs(str){
+
+    let result = false;
+    let counter = 0;
+    
+    for(let i = 0; i < str.length; i++){
+
+        // isNaN kullanmamın sebebi sadece numaraları almak istediğimden dolayı.
+       if(isNaN(str[i])){
+            counter = 0;
+        } else if (str[i] % 2 !== 0){
+        } else if(str[i] % 2 === 0){
+            counter ++;
+        }
+
+        if(counter === 2){
+            result = true;
+        } 
+    }
+
+    return result;
+
+}
+
+console.log(EvenPairs("3gy41d216")) // true
+console.log(EvenPairs("f09r27i8e67")) // false
+console.log(EvenPairs("f178svg3k19k46")) // true
+
+
+
+
+
 
 
 
 // ********  ********
+
+
+
