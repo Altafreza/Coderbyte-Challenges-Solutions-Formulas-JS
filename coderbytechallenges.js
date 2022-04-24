@@ -817,19 +817,22 @@ console.log(LargestFour([4, 5, -2, 3, 1, 2, 6, 6])) // 21
 
 
 
+
+
+
 // -------------------------------------------------------------
 // JUST A REMINDER:
 
-    let strArr = "[1, 2, 3, 4, 5]"
+let strArr = "[1, 2, 3, 4, 5]"
 
-    let str = strArr.toString().match(/\d+/g).join()
-    console.log("str:", str) // str: 1,2,3,4,5
+let str = strArr.toString().match(/\d+/g).join()
+console.log("str:", str) // str: 1,2,3,4,5
 
-    let str2 = strArr.toString().match(/\d+/g)
-    console.log("str2:", str2) // str2: (5) ['1', '2', '3', '4', '5']
+let str2 = strArr.toString().match(/\d+/g)
+console.log("str2:", str2) // str2: (5) ['1', '2', '3', '4', '5']
 
-    console.log("str3:", str[0]) // str3: 1
-    console.log("str4:", str[str.length - 1]) // str4: 5
+console.log("str3:", str[0]) // str3: 1
+console.log("str4:", str[str.length - 1]) // str4: 5
 
 // -------------------------------------------------------------
 
@@ -898,8 +901,30 @@ console.log(MatrixSpiral(["[4, 5, 6, 5]", "[1, 1, 2, 2]", "[5, 4, 2, 9]"])) // 4
 
 
 
+// ********  Math Challenge  ********
 
+function MathChallenge(num1, num2) {
 
+    let res = []
+
+    for (let i = 1; i < 1000; i++) {
+
+        if (num1 % i === 0 && num2 % i === 0) {
+            res.push(i)
+        } else {
+            res.push(false)
+        }
+    }
+
+    let sort = res.sort((a, b) => b - a)
+    let Largest = sort.find((x) => x > sort[1])
+
+    return Largest;
+};
+console.log(MathChallenge(7, 3)) // 1
+console.log(MathChallenge(12, 16)) // 4
+console.log(MathChallenge(36, 54)) // 18
+console.log(MathChallenge(8, 8)) // 8
 
 
 
