@@ -1,15 +1,15 @@
 
 // ******** FIRST FACTORIAL ********
 
-function FirstFactorial(num) { 
-    if ((num === 0) ||  (num === 1) )
-    return 1;
+function FirstFactorial(num) {
+    if ((num === 0) || (num === 1))
+        return 1;
     else
-    return (num * FirstFactorial(num - 1)); 
+        return (num * FirstFactorial(num - 1));
 }
-   
+
 // keep this function call here 
-console.log(FirstFactorial(8)); 
+console.log(FirstFactorial(8));
 
 
 
@@ -17,10 +17,10 @@ console.log(FirstFactorial(8));
 // ******** FIRST REVERSE ********
 
 // Method - 1:
-function FirstReverse(str){
+function FirstReverse(str) {
     var backwardString = "";
     var splitString = str.split("");
-    for (var i = splitString.length - 1; i >= 0; i--){
+    for (var i = splitString.length - 1; i >= 0; i--) {
         backwardString += splitString[i];
     }
     return backwardString;
@@ -30,21 +30,21 @@ function FirstReverse(str){
 
 
 // Method - 2:
-function FirstReverse(str) { 
+function FirstReverse(str) {
 
     // code goes here  
     return str.split("").reverse().join("")
-           
-  }
-     
-  // keep this function call here 
-  FirstReverse(readline());
+
+}
+
+// keep this function call here 
+FirstReverse(readline());
 
 
 
 // ******** Find Intersection ********
 
-function FindIntersection(strArr){
+function FindIntersection(strArr) {
 
     let arr1 = strArr[0].split(",")
     // console.log("arr1",arr1) // arr1 (5) ['1', ' 3', ' 4', ' 7', ' 13']
@@ -60,11 +60,11 @@ function FindIntersection(strArr){
     //     return arr2.includes(value); 
     // });
 
-    if(filter.length === 0){ 
-        return false; 
-      } else { 
+    if (filter.length === 0) {
+        return false;
+    } else {
         return filter.join(",").replace(/\s/g, "");
-      }
+    }
 
 }
 console.log(FindIntersection(["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"])) // 1,4,13
@@ -83,9 +83,9 @@ replace(/\s/g, ""); // virgülden önceki tüm boşlukları boş bir dize ile de
 
 
 
-  // ******** Longest Word ********
+// ******** Longest Word ********
 
-  function LongestWord(sen) { 
+function LongestWord(sen) {
 
     //regex2(digits + words) = /\d+|([a-zA-Z])\w+/g
 
@@ -93,40 +93,40 @@ replace(/\s/g, ""); // virgülden önceki tüm boşlukları boş bir dize ile de
     // console.log("res",res)
 
 
-    let sort = res.sort(function(a,b) {
+    let sort = res.sort(function (a, b) {
         return b.length - a.length
     })
     // console.log("s",sort)
 
     return sort[0]
 
-  
-  }
-  console.log(LongestWord("Hello world123 567")); // world123
-  console.log(LongestWord("fun&!! time")); // time
-  console.log(LongestWord("x love dogs")); // love
+
+}
+console.log(LongestWord("Hello world123 567")); // world123
+console.log(LongestWord("fun&!! time")); // time
+console.log(LongestWord("x love dogs")); // love
 
 
 
 
 
- // ******** Questions Marks ********
+// ******** Questions Marks ********
 
-function QuestionsMarks(str) { 
+function QuestionsMarks(str) {
     result = false;
 
-    for(let i = 0; i < str.length; i++){
-        for(let x = i+1; x < str.length; x++){
-         
-            if(Number(str[i]) + Number(str[x]) === 10){              
+    for (let i = 0; i < str.length; i++) {
+        for (let x = i + 1; x < str.length; x++) {
+
+            if (Number(str[i]) + Number(str[x]) === 10) {
                 result = true;
 
-                if(str.slice(i, x).split("?").length -1 != 3){
-                  return false;
+                if (str.slice(i, x).split("?").length - 1 != 3) {
+                    return false;
 
-                // veya 
-                //if(str.slice(i,x).split("?").length -1 < 3){  
-                // dikkat => "<3"
+                    // veya 
+                    //if(str.slice(i,x).split("?").length -1 < 3){  
+                    // dikkat => "<3"
                 }
             }
         }
@@ -144,66 +144,66 @@ console.log(QuestionsMarks("aa6?9")) // false
 
 // ******** Prime Time ********
 
-function PrimeTime(num){
+function PrimeTime(num) {
 
-    if(num < 2){
+    if (num < 2) {
         return false
     }
-    
-    if(num === 2){
+
+    if (num === 2) {
         return true;
     }
-    
-    if(num % 2 === 0){
-    return false;
-    } 
-    
-    return true;
+
+    if (num % 2 === 0) {
+        return false;
     }
-    console.log(PrimeTime(19)) // true
-    console.log(PrimeTime(110)) // false
-    console.log(PrimeTime(2)) // true
+
+    return true;
+}
+console.log(PrimeTime(19)) // true
+console.log(PrimeTime(110)) // false
+console.log(PrimeTime(2)) // true
 
 
 // ***** Method: 2
-function PrimeTime(num){
+function PrimeTime(num) {
 
-    if(num < 2 ){
+    if (num < 2) {
         return false;
     }
-    
-    for(let i = 2; i < num; i++){
-        if(num % i === 0){
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
             return false;
         }
     }
-    
+
     return true;
-    }
-    console.log(PrimeTime(19)) // true
-    console.log(PrimeTime(110)) // false
-    console.log(PrimeTime(2)) // true
+}
+console.log(PrimeTime(19)) // true
+console.log(PrimeTime(110)) // false
+console.log(PrimeTime(2)) // true
 
 
 
 
 // ******** Consonant Count  ********
 
-function ConsonantCount(str){
+function ConsonantCount(str) {
 
     // let vowel = "aeiouAEIOU"
     let Cons = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
     let result = []
 
-for (let i = 0; i < str.length; i++){
-     for(let x = 0; x < Cons.length; x++){
-         if (str[i] === Cons[x]) {
-            result.push(str[i])
-            console.log(result)
-         }
-     }
-}
-return result.length;
+    for (let i = 0; i < str.length; i++) {
+        for (let x = 0; x < Cons.length; x++) {
+            if (str[i] === Cons[x]) {
+                result.push(str[i])
+                console.log(result)
+            }
+        }
+    }
+    return result.length;
 
 };
 console.log(ConsonantCount("Hello World")) // 7 
@@ -213,17 +213,17 @@ console.log(ConsonantCount("Sessiz Sessiz")) // 8
 
 // ******* Method: 2 
 
-function ConsonantCount(str){
+function ConsonantCount(str) {
 
     let count = 0
     let Cons = "bcdfghjklmnpqrstvwxyz"
 
-for (let i = 0; i < str.length; i++){
-        if(Cons.indexOf(str[i].toLowerCase()) > -1){
+    for (let i = 0; i < str.length; i++) {
+        if (Cons.indexOf(str[i].toLowerCase()) > -1) {
             count++;
         }
-     }
-return count;
+    }
+    return count;
 };
 console.log(ConsonantCount("Hello World")) // 7 
 console.log(ConsonantCount("Alphabets")) // 6 
@@ -238,13 +238,13 @@ Cons.indexOf(str[i].toLowerCase()) > -1
 
 // ******** Consonant Count  ********
 
-function CheckNums(num1, num2){
+function CheckNums(num1, num2) {
 
-    if(num2 > num1){
+    if (num2 > num1) {
         return true;
-    } else if(num1 == num2) {
+    } else if (num1 == num2) {
         return -1
-    } else{
+    } else {
         return false;
     }
 }
@@ -257,27 +257,27 @@ console.log(CheckNums(3, 1)) // false
 
 // ******** Palindrome Two ********
 
-function PalindromeTwo(str){
+function PalindromeTwo(str) {
     let String = "aeioubcdfghjklmnpqrstvwxyzAEIOUBCDFGHJKLMNPQRSTVWXYZ"
     let result = []
 
-    for(let i = 0; i < str.length; i++){
-        for(let x = 0; x < String.length; x++){
-            if(str[i] == String[x]){
+    for (let i = 0; i < str.length; i++) {
+        for (let x = 0; x < String.length; x++) {
+            if (str[i] == String[x]) {
                 result.push(str[i])
             }
         }
     }
 
-result = result.join("").toLowerCase()
-// console.log("result:", result) // result: helloworld
+    result = result.join("").toLowerCase()
+    // console.log("result:", result) // result: helloworld
 
-let reverse = result.split("").reverse().join("")
-// console.log("reverse:", reverse) // reverse: dlrowolleh
+    let reverse = result.split("").reverse().join("")
+    // console.log("reverse:", reverse) // reverse: dlrowolleh
 
-if(result == reverse){
-    return true;
-} else  return false;
+    if (result == reverse) {
+        return true;
+    } else return false;
 
 };
 
@@ -291,24 +291,24 @@ console.log(PalindromeTwo("Hello World")) // false
 
 // ******** Method - 2:
 
-function PalindromeTwo(str){
+function PalindromeTwo(str) {
     let re = /[a-zA-Z]/ // aA'dan zZ'ye kontrol et (Harf dışında başka bir şey içermez)
     let arr = [];
 
-    for (let i = 0; i < str.length; i++){
-        if(str.charAt(i).match(re)){ // str'yi regex ile eşleştiriyorum ve içindekileri arr'ye atacağum, böylece harf dışındaki karakterler gelmeyecek
-        arr.push(str.charAt(i).toLowerCase())
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i).match(re)) { // str'yi regex ile eşleştiriyorum ve içindekileri arr'ye atacağum, böylece harf dışındaki karakterler gelmeyecek
+            arr.push(str.charAt(i).toLowerCase())
         }
     }
-    
+
     let x = arr.join("") // A ve Z harici değerleri "=?!_#" gibi almadık ve join ile aldıklarımı birleştiriyorum
     console.log(arr) // ["k","u","l","l","u","k"] => idü
     console.log(x) // kulluk => oldu
 
     arrjoin = arr.reverse().join("")
-    console.log("arrjoin:",arrjoin) // kulluk (Tersi :D)
+    console.log("arrjoin:", arrjoin) // kulluk (Tersi :D)
 
-    if(arrjoin == x){
+    if (arrjoin == x) {
         return true;
     } else {
         return false;
@@ -327,15 +327,15 @@ function ExOh(str) {
     let x = []
     let o = []
 
-    for (i = 0; i < str.length; i++){
+    for (i = 0; i < str.length; i++) {
         if (str[i] === "x") {
             x.push(str[i])
-        } else if(str[i] === "o"){
+        } else if (str[i] === "o") {
             o.push(str[i])
         }
     }
 
-    if(x.length === o.length){
+    if (x.length === o.length) {
         return true;
     } else return false;
 
@@ -345,7 +345,7 @@ function ExOh(str) {
 };
 console.log(ExOh("xooxxo")) // true
 console.log(ExOh("x")) // false
-console.log(ExOh("xooxxxxooxo" )) // false
+console.log(ExOh("xooxxxxooxo")) // false
 
 
 
@@ -358,17 +358,17 @@ console.log(ExOh("xooxxxxooxo" )) // false
 // console.log("x:",x[x.length-1]) // x: 15
 
 
-function Consecutive(arr){
- 
-    let res = []  
+function Consecutive(arr) {
+
+    let res = []
 
     // önce arr'yi güçükten büyüğe sıralayalum
-    let sortNumbers = arr.sort((a,b) => a-b)
+    let sortNumbers = arr.sort((a, b) => a - b)
 
     // daha sonra sıraladıklarımızı for ile getirelim
     // Birinci index'ten başlasın, son index'e kadar olan sayıları bir getirsin bize
     // daha sonra da o sayıları "res" değişkenimize paketleyelim
-    for (let i = sortNumbers[0]; i <= sortNumbers[sortNumbers.length-1]; i++){
+    for (let i = sortNumbers[0]; i <= sortNumbers[sortNumbers.length - 1]; i++) {
         res.push(i)
     }
 
@@ -376,9 +376,101 @@ function Consecutive(arr){
     return res.length - arr.length;
 
 }
-console.log("result:",Consecutive([5,10,15])) // 8 
-console.log("result:",Consecutive([-2,10,4])) // 10 
-console.log("result:",Consecutive([4, 8, 6])) // 2 
+console.log("result:", Consecutive([5, 10, 15])) // 8 
+console.log("result:", Consecutive([-2, 10, 4])) // 10 
+console.log("result:", Consecutive([4, 8, 6])) // 2 
+
+
+
+
+
+// ******** Swap Case ********
+
+function SwapCase(str) {
+    let arr = []
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toLowerCase()) {
+            arr.push(str[i].toUpperCase())
+        } else {
+            arr.push(str[i].toLowerCase())
+        }
+    }
+
+    return arr.join("")
+
+}
+console.log(SwapCase("Hello-LOL")) // hELLO-lol
+console.log(SwapCase("Hello World")) // hELLO wORLD
+console.log(SwapCase("Sup DUDE!!?")) // sUP dude!!?
+
+
+
+// *** Another Solution:
+function SwapCase(str) {
+
+    let Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let Lower = "abcdefghijklmnopqrstuvwxyz"
+    let result = "";
+
+    for (let i = 0; i < str.length; i++) {
+
+        if (Upper.indexOf(str[i]) !== -1) {
+            result += Lower.charAt(Upper.indexOf(str[i]));
+        }
+
+        else if (Lower.indexOf(str[i]) !== -1) {
+            result += Upper.charAt(Lower.indexOf(str[i]));
+        }
+
+        if (!str[i].match(/[a-zA-Z]/)) {
+            result += str[i]
+        }
+
+    }
+
+    return result;
+};
+console.log(SwapCase("Hello-LOL")) // hELLO-lol
+console.log(SwapCase("Hello World")) // hELLO wORLD
+console.log(SwapCase("Sup DUDE!!?")) // sUP dude!!?
+
+
+// *** Another Solution-2:
+function SwapCase(str) {
+
+    strUp = str.split("").map(x =>
+        x == x.toLowerCase() ? x.toUpperCase() : x.toLowerCase()
+    ).join("")
+
+    return strUp;
+
+};
+console.log(SwapCase("Hello-LOL")) // hELLO-lol
+console.log(SwapCase("Hello World")) // hELLO wORLD
+console.log(SwapCase("Sup DUDE!!?")) // sUP dude!!?
+
+
+
+
+
+
+
+
+// ********  ********
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
