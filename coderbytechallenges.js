@@ -511,6 +511,10 @@ console.log(PowerSetCount([5, 6])) // 4
 console.log(PowerSetCount([1, 2, 3])) // 8
 console.log(PowerSetCount([1, 2, 3, 4])) // 16
 
+
+
+
+// ***********************************
 // Shall we show you the power set too ? ? ? 
 function PowerSet(arr) {
 
@@ -556,30 +560,29 @@ console.log(PowerSet([1, 2, 3, 4]))
 
 // ******** Even Pairs ********
 
-function EvenPairs(str){
+function EvenPairs(str) {
 
     let result = false;
     let counter = 0;
-    
-    for(let i = 0; i < str.length; i++){
+
+    for (let i = 0; i < str.length; i++) {
 
         // isNaN kullanmamın sebebi sadece numaraları almak istediğimden dolayı.
-       if(isNaN(str[i])){
+        if (isNaN(str[i])) {
             counter = 0;
-        } else if (str[i] % 2 !== 0){
-        } else if(str[i] % 2 === 0){
-            counter ++;
+        } else if (str[i] % 2 !== 0) {
+        } else if (str[i] % 2 === 0) {
+            counter++;
         }
 
-        if(counter === 2){
+        if (counter === 2) {
             result = true;
-        } 
+        }
     }
 
     return result;
 
-}
-
+};
 console.log(EvenPairs("3gy41d216")) // true
 console.log(EvenPairs("f09r27i8e67")) // false
 console.log(EvenPairs("f178svg3k19k46")) // true
@@ -588,10 +591,53 @@ console.log(EvenPairs("f178svg3k19k46")) // true
 
 
 
+// ******** Simple Evens  ********
+
+function SimpleEvens(num) {
+
+    let string = num.toString()
+    let result = true
+
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] % 2 !== 0) {
+            return result = false;
+        }
+    }
+
+    return result;
+}
+console.log(SimpleEvens(4602225)) // false
+console.log(SimpleEvens(22222022)) // true
+console.log(SimpleEvens(208646464652)) // false
 
 
 
-// ********  ********
+// Method - 2:
+function SimpleEvens(num) {
+
+    let result = num.toString().split("").map((num) => {
+        return (Number(num) % 2 === 0);
+    });
+
+    return result.every((e) => e === true)
+
+};
+console.log(SimpleEvens(4602225)) // false
+console.log(SimpleEvens(22222022)) // true
+console.log(SimpleEvens(208646464652)) // false
+
+
+
+
+
+// ********   ********
+
+
+
+
+
+
+
 
 
 
