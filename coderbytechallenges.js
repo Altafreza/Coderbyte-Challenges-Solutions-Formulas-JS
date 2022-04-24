@@ -817,6 +817,94 @@ console.log(LargestFour([4, 5, -2, 3, 1, 2, 6, 6])) // 21
 
 
 
+// -------------------------------------------------------------
+// JUST A REMINDER:
+
+    let strArr = "[1, 2, 3, 4, 5]"
+
+    let str = strArr.toString().match(/\d+/g).join()
+    console.log("str:", str) // str: 1,2,3,4,5
+
+    let str2 = strArr.toString().match(/\d+/g)
+    console.log("str2:", str2) // str2: (5) ['1', '2', '3', '4', '5']
+
+    console.log("str3:", str[0]) // str3: 1
+    console.log("str4:", str[str.length - 1]) // str4: 5
+
+// -------------------------------------------------------------
+
+
+
+
+// ********  Matrix Spiral  ********
+
+function MatrixSpiral(strArr) {
+
+    let number1 = []
+    let number2 = []
+    let number3 = []
+    // let number4 = []
+
+    let result = []
+
+    if (strArr.length == 1) {
+
+        number1.push(strArr[0])
+        let number1String = number1.toString().match(/\d+/g)
+        result.push(number1String)
+    }
+    else if (strArr.length == 2) {
+
+        number1.push(strArr[0])
+        number2.push(strArr[1])
+
+        let number1String = number1.toString().match(/\d+/g)
+        let number2String = number2.toString().match(/\d+/g).reverse()
+
+        result.push(number1String)
+        result.push(number2String)
+    }
+    else if (strArr.length == 3) {
+        number1.push(strArr[0])
+        number2.push(strArr[1])
+        number3.push(strArr[2])
+
+        let number1String = number1.toString().match(/\d+/g)
+        let number2String = number2.toString().match(/\d+/g)
+        let number3String = number3.toString().match(/\d+/g).reverse()
+
+        result.push(number1String)
+        result.push(number2String[number2String.length - 1])
+        result.push(number3String)
+        result.push(number2String.slice(0, number2String.length - 1))
+    }
+
+    return result.toString()
+
+
+}
+// 1
+console.log(MatrixSpiral(["[4, 2]"])) // 4,2
+console.log(MatrixSpiral(["[1, 2, 3]"])) // 1,2,3
+console.log(MatrixSpiral(["[9]"])) // 9
+// 2
+console.log(MatrixSpiral(["[1, 2]", "[10, 14]"])) // 1,2,14,10
+console.log(MatrixSpiral(["[1, 2, 3, 4, 2, 10, 12, 2]", "[1, 1, 2, 2, 6, 7, 8, 1]"])) // 1,2,3,4,2,10,12,2,1,8,7,6,2,2,1,1
+// 3
+console.log(MatrixSpiral(["[1, 2, 3]", "[4, 5, 6]", "[7, 8, 9]"])) // 1,2,3,6,9,8,7,4,5
+console.log(MatrixSpiral(["[4, 5, 6, 5]", "[1, 1, 2, 2]", "[5, 4, 2, 9]"])) // 4,5,6,5,2,9,2,4,5,1,1,2
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
