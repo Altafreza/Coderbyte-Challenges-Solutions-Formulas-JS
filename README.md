@@ -1,4 +1,4 @@
-#  <strong> Coderbyte Challenges, Solutions and Formulas
+#  <strong> Coderbyte Challenges, Solutions and Formulas (JavaScript)
 ![Coderbyte](https://media.giphy.com/media/AhjXalGPAfJg4/giphy.gif)
 
 <br>
