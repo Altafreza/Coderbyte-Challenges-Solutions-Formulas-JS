@@ -13,9 +13,6 @@ let regexUpper = /[A-Z]/
 let Lower = "abcdefghijklmnopqrstuvwxyz"
 let regexLower = /[a-z]/
 
-let String = "aeioubcdfghjklmnpqrstvwxyzAEIOUBCDFGHJKLMNPQRSTVWXYZ"
-.match(/([a-zA-Z])\w+/g)
-
 let Vowel = "aeiouAEIOU"
 .match(/([aeiouAEIOU])/g) 
 
@@ -26,9 +23,11 @@ let Consonant = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
 
 
 // **************************************************************
-
 let numbers =  [1, 2, 3, 4]
+
 let string = ["cat", "dog"]
+
+
 
 let numbersPush = numbers.push(5)
 console.log("push:", numbers); // push: (5) [1, 2, 3, 4, 5]
@@ -63,62 +62,73 @@ console.log("indexOf2:", stringIndexOf2); // indexOf2: 0
 let stringIncludes = string.includes("cat");
 console.log("includes:", stringIncludes); // includes: true
 
+
+// *****************************
 let numbers2 =  [3, 5, 6, 8]
 
-let numbers2Find = numbers2.find((f) => f % 2 === 0);
-console.log("find:", numbers2Find); // find: 6
+console.log("find:", numbers2.find((f) => f % 2 === 0)); // 6
 
-let numbers2Filter = numbers2.filter((f) => f % 2 === 0);
-console.log("filter:", numbers2Filter); // filter: (2) [6, 8]
+console.log(numbers2.filter((f) => f % 2 === 0)); // (2) [6, 8]
 
-let numbers2FindIndex = numbers2.findIndex((x) => x % 2 !== 0);
-console.log("findIndex:", numbers2FindIndex); // findIndex: 0 (index numarası [0], yani -3-)
+console.log(numbers2.findIndex((x) => x % 2 !== 0)); // 0 (index numarası [0], yani 0. index olan >3< )
 
-let numbers2Map = numbers2.map((m) => m * 2);
-console.log("map:", numbers2Map); // map: (4) [6, 10, 12, 16]
+console.log(numbers2.map((m) => m * 2)); // (4) [6, 10, 12, 16]
 
-let numbers2Reduce = numbers2.reduce((a, b) => a + b);
-console.log("reduce:", numbers2Reduce); // map: (6+10+12+16) => output: 22
+console.log(numbers2.reduce((a, b) => a + b)); // (6+10+12+16) => output: 22
 
-let numbers2Every = numbers2.every((e) => e > 3);
-console.log("every:", numbers2Every); // every: false
+console.log(numbers2.every((e) => e > 3)); // false
 
-let numbers2Some = numbers2.some((s) => s > 3);
-console.log("some:", numbers2Some); // some: true
+console.log(numbers2.some((s) => s > 3)); // true
 
-let numbers2Reverse = numbers2.reverse();
-console.log("reverse:", numbers2Reverse); // reverse: (4) [8, 6, 5, 3]
+console.log(numbers2.reverse()); // (4) [8, 6, 5, 3]
 
-let line = ["a", "b", "c", "d", "e"]
 
-let lineCharAt = line.at(-2);
-console.log("at:", numbers2CharAt); // at: d
 
-let lineCharAt2 = line.at(2);
-console.log("at:", numbers2CharAt2); // at: c
 
+// *****************************
 let myName =  "Ali Kartal"
 
-let lineLast = myName.lastIndexOf("a")
-console.log("last:", lineLast); // last: 8
+console.log("last:", myName.lastIndexOf("a")); // 8
 
-let lineSearch = myName.search("Kar")
-console.log("search:", lineSearch); // search: 4
+console.log(myName.search("Kar")); // 4
 
-let lineReplace = myName.replace("Ali", "Aliço")
-console.log("replace:", lineReplace); // replace: Aliço Kartal
+console.log(myName.replace("Ali", "Aliço")); // Aliço Kartal
 
-let lineSplit = myName.split("")
-console.log("split:", lineSplit); // split: (10) ['A', 'l', 'i', ' ', 'K', 'a', 'r', 't', 'a', 'l']
+console.log(myName.split("")); // split: (10) ['A', 'l', 'i', ' ', 'K', 'a', 'r', 't', 'a', 'l']
 
+
+
+// *****************************
 let newName = "Dean,Winchester"
-
-let newNameSplit = newName.split(",")
-console.log("split2:", newNameSplit); // split2: (2) ['Dean', 'Winchester']
+console.log(newName.split(",")); // (2) ['Dean', 'Winchester']
 
 
 
+// *****************************
+let line = ["a", "b", "c", "d", "e"]
 
+let otherName = "Castiel"
+
+console.log("at:", line.at(-2)); // d
+console.log("at:", line.at(2)); // c
+
+
+console.log(otherName.charCodeAt(0)) // 67
+console.log(otherName.charCodeAt(1)) // 97
+
+// Not: charCodeAt() => Belirtilen index numarasında yer alan karakterin Unicode değerini verir.
+
+console.log(String.fromCharCode(67, 97, 115, 116, 105, 101, 108)) // Castiel
+console.log(String.fromCharCode(65, 66, 67, 68, 69, 70)) // ABCDEF
+
+
+
+
+
+
+
+
+// **********************************************************
 
 
 //EXAMPLE-1: İki dizeyi karşılaştırıp, ortakları yeni bir dize de birleştirelim:
