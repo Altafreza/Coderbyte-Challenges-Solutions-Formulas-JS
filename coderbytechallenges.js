@@ -957,10 +957,10 @@ console.log(ArrayChallenge([10, 4, 5, 2, 4])) // 4
 console.log(ArrayChallenge([10, 9, 8, 7, 6])) // -1
 console.log(ArrayChallenge([2, 9, 9, 8, 2])) // 2
 
-console.log(ArrayChallenge([1,2,2,3])) // 2
-console.log(ArrayChallenge([100,200,100,45,3])) // 100
-console.log(ArrayChallenge([4,5,1,6,7,8,100,200,1000,5])) // 5
-console.log(ArrayChallenge([4,5,6,1,2,4])) // 4
+console.log(ArrayChallenge([1, 2, 2, 3])) // 2
+console.log(ArrayChallenge([100, 200, 100, 45, 3])) // 100
+console.log(ArrayChallenge([4, 5, 1, 6, 7, 8, 100, 200, 1000, 5])) // 5
+console.log(ArrayChallenge([4, 5, 6, 1, 2, 4])) // 4
 
 // But this answer is wrong? ? ? 
 console.log(ArrayChallenge([4, 4, 5, 6, 7, 8, 8, 8, 8, 8])) // 8
@@ -1046,6 +1046,18 @@ console.log(PrimeMover(567)) // 4127
 
 
 
+// ********  Simple Adding  ********
+function SimpleAdding(num) {
 
+    let res = []
 
+    for (let i = 0; i <= num; i++) {
+        res.push(i)
+    }
+
+    return res.reduce((a, b) => a + b)
+};
+console.log(SimpleAdding(4)) // 10
+console.log(SimpleAdding(12)) // 78
+console.log(SimpleAdding(140)) // 9870
 
