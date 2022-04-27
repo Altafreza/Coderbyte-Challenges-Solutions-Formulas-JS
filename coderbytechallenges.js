@@ -144,6 +144,7 @@ console.log(QuestionsMarks("aa6?9")) // false
 
 // ******** Prime Time ********
 
+// ***** Method: 1 => This is half true! :)
 function PrimeTime(num) {
 
     if (num < 2) {
@@ -165,7 +166,7 @@ console.log(PrimeTime(110)) // false
 console.log(PrimeTime(2)) // true
 
 
-// ***** Method: 2
+// ***** Method: 2 => This is true!
 function PrimeTime(num) {
 
     if (num < 2) {
@@ -955,6 +956,96 @@ console.log(ArrayChallenge([5, 10, 10, 6, 5])) // 5
 console.log(ArrayChallenge([10, 4, 5, 2, 4])) // 4
 console.log(ArrayChallenge([10, 9, 8, 7, 6])) // -1
 console.log(ArrayChallenge([2, 9, 9, 8, 2])) // 2
+
+console.log(ArrayChallenge([1,2,2,3])) // 2
+console.log(ArrayChallenge([100,200,100,45,3])) // 100
+console.log(ArrayChallenge([4,5,1,6,7,8,100,200,1000,5])) // 5
+console.log(ArrayChallenge([4,5,6,1,2,4])) // 4
+
+// But this answer is wrong? ? ? 
+console.log(ArrayChallenge([4, 4, 5, 6, 7, 8, 8, 8, 8, 8])) // 8
+
+
+// ************************************
+// Method - 2 : long way i guess :D...
+function ArrayChallenge(arr) {
+
+    let res = []
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let x = i + 1; x < arr.length; x++) {
+            if (arr[i] === arr[x]) {
+                res.push(arr[i])
+            }
+        }
+    }
+
+    res.sort((a, b) => a - b)
+
+    let final = []
+
+    for (let i = 0; i < res.length; i++) {
+        for (let x = i + 1; x < res.length; x++) {
+            if (res[i] === res[x]) {
+                final.push(res[i])
+            }
+        }
+    }
+
+    final.sort((a, b) => a - b)
+    console.log("final:", final)
+
+    if (final.length === 0) {
+        return -1
+    } else {
+        return final[0]
+    }
+
+};
+console.log(ArrayChallenge([4, 4, 5, 6, 7, 8, 8, 8, 8, 8])) // 8
+
+
+
+
+
+
+// ********  Prime Mover  ********
+function PrimeMover(num) {
+
+    let primeNumbers = []
+
+    for (let i = 1; i <= 10000; i++) {
+        let mark = 0;
+
+        for (let x = 2; x < i; x++) {
+            if (i % x == 0) {
+                mark = 1;
+                break;
+            }
+        }
+
+        if (i > 1 && mark == 0) {
+            primeNumbers.push(i)
+        }
+    }
+
+    return primeNumbers[num - 1]
+
+};
+console.log(PrimeMover(9)) // 23
+console.log(PrimeMover(100)) // 541
+console.log(PrimeMover(16)) // 53
+console.log(PrimeMover(3)) // 5
+console.log(PrimeMover(1)) // 2
+
+console.log(PrimeMover(400)) // 2741
+console.log(PrimeMover(565)) // 4099
+console.log(PrimeMover(312)) // 2069
+console.log(PrimeMover(567)) // 4127
+
+
+
+
 
 
 
