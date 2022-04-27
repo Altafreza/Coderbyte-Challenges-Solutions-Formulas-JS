@@ -1061,3 +1061,43 @@ console.log(SimpleAdding(4)) // 10
 console.log(SimpleAdding(12)) // 78
 console.log(SimpleAdding(140)) // 9870
 
+
+
+// ********  Searching Challenge (or Letter Count)  ********
+function SearchingChallenge(str) {
+
+    let res = []
+
+    let strSplit = str.toString().split(" ")
+    // console.log(strSplit)
+    // strSplit (3) ['Hello', 'apple', 'pie']
+    // strSplit (2) ['No', 'words']
+
+    for (let i = 0; i < strSplit.length; i++) {
+        let str2 = strSplit[i].toString().split("")
+
+        for (let x = 0; x < str2.length; x++) {
+            for (let y = x + 1; y < str2.length; y++) {
+                if (str2[x] === str2[y]) {
+                    res.push(strSplit[i])
+                }
+            }
+        }
+    }
+
+    if (res.length === 0) {
+        return -1
+    } else {
+        return res[0]
+    }
+
+};
+console.log(SearchingChallenge("Hello apple pie")) // Hello
+console.log(SearchingChallenge("No words")) // -1
+console.log(SearchingChallenge("Today, is the greatest day ever!")) // greatest 
+
+
+
+
+
+
