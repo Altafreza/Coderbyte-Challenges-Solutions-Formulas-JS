@@ -1099,5 +1099,49 @@ console.log(SearchingChallenge("Today, is the greatest day ever!")) // greatest
 
 
 
+// ******** Front-end Challenge  ********
+
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+function DataList(props) {
+  return (
+    <h2>code goes here</h2>
+  );
+}
+
+const data = [
+  { name: 'Daniel', age: 25 },
+  { name: 'John', age: 24 },
+  { name: 'Jen', age: 31 },
+];
+
+ReactDOM.render(
+  <DataList data={ data } />,
+  document.getElementById('root')
+);
+
+//-----
+
+  <ul>
+  {
+    data.map((item) => (
+      <li key={item}>
+        <span>{item.name} {item.age}</span> 
+      </li>
+    ))
+  }
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
 
 

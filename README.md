@@ -690,3 +690,22 @@ Output: -1
 <br>
 <hr>
 <br>
+
+## Front-end Challenge
+<br>
+
+Front-end Challenge
+We provided some simple React template code. Your goal is to display an unordered list (UL) with list items (LI) within it. The content of each list item should contain two spans (SPAN), one with the name and the other with the age passed in to the DataList function. The span elements should be separated by a single space.
+
+<br>
+
+
+```
+
+Submit your code once it is complete and our system will validate your output.
+
+
+```
+<br>
+<hr>
+<br>
