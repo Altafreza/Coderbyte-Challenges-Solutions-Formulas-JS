@@ -1105,41 +1105,90 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 function DataList(props) {
-  return (
-    <h2>code goes here</h2>
-  );
+    return (
+        <h2>code goes here</h2>
+    );
 }
 
 const data = [
-  { name: 'Daniel', age: 25 },
-  { name: 'John', age: 24 },
-  { name: 'Jen', age: 31 },
+    { name: 'Daniel', age: 25 },
+    { name: 'John', age: 24 },
+    { name: 'Jen', age: 31 },
 ];
 
 ReactDOM.render(
-  <DataList data={ data } />,
-  document.getElementById('root')
+    <DataList data={data} />,
+    document.getElementById('root')
 );
 
 //-----
 
-  <ul>
-  {
-    data.map((item) => (
-      <li key={item}>
-        <span>{item.name} {item.age}</span> 
-      </li>
-    ))
-  }
-  </ul>
+<ul>
+    {
+        data.map((item) => (
+            <li key={item}>
+                <span>{item.name} {item.age}</span>
+            </li>
+        ))
+    }
+</ul>
 
 
 
 
 
 
+// ******** Letter Changes  ********
+
+function LetterChanges(str) { //example: abcd
+
+    let newStr = str.replace(/[a-zA-Z]/gi, function (LC) {
+        if (LC == "Z" || LC == "z") {
+            return "A"
+        } else {
+            return String.fromCharCode(LC.charCodeAt(0) + 1);
+        }
+    });
+    // console.log("newstr:",newStr) // bcde
+
+    let res = newStr.replace(/[aeiou]/gi, function (LC) {
+        return LC.toUpperCase()
+    });
+    // console.log("res:",res) // res: bcdE
+
+    return res;
+};
+console.log(LetterChanges("abcd")) // bcdE
+console.log(LetterChanges("aeiou")) // bfjpv
+console.log(LetterChanges("zdhnt")) // AEIOU
+console.log(LetterChanges("Ali Kartal")) // Bmj LbsUbm
 
 
+
+// Method - 2:
+function LetterChanges(str) {
+
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    var newAlphabet = "bcdEfghIjklmnOpqrstUvwxyzA";
+    var result = [];
+
+    for (i = 0; i < str.length; i++) {
+
+        if (alphabet.indexOf(str[i].toLowerCase()) !== -1) {
+            result.push(newAlphabet.charAt(alphabet.indexOf(str[i].toLowerCase())))
+        } else {
+            result.push(str[i])
+        }
+    }
+    return result.join("");
+
+};
+console.log(LetterChanges("abcd")) // bcdE
+console.log(LetterChanges("aeiou")) // bfjpv
+console.log(LetterChanges("zdhnt")) // AEIOU
+console.log(LetterChanges("zdhnt!!?")) // AEIOU!!?
+console.log(LetterChanges("Ali Kartal")) // bmj lbsUbm
+console.log(LetterChanges("abcdefghijklmnopqrstuvwxyz")) // bcdEfghIjklmnOpqrstUvwxyzA
 
 
 
