@@ -1,5 +1,5 @@
 #  <strong> Coderbyte Challenges, Solutions and Formulas (JavaScript)
-![Coderbyte](https://media.giphy.com/media/AhjXalGPAfJg4/giphy.gif)
+![Coderbyte](https://github.com/alikartalonline/Coderbyte-Challenges-Solutions-Formulas-JS/blob/main/gif/alikartalonline.gif)
 
 <br>
 
