@@ -460,19 +460,32 @@ console.log(SwapCase("Sup DUDE!!?")) // sUP dude!!?
 
 // ******** ThreeFive Multiples ********
 
+function ThreeFiveMultiples(num) { 
+
+    // code goes here  
+    let arr = []
+  
+    for(let i = 0; i < num; i++){
+      if(i % 5 === 0 || i % 3 === 0){
+        arr.push(i)
+      }
+    }
+  
+  return arr.reduce((a,b) => a+b)
+  
+  }
+console.log(ThreeFiveMultiples(6)); // 8
+console.log(ThreeFiveMultiples(1)); // 0
+
+
+
+// Method - 2:
 function ThreeFiveMultiples(num) {
 
-    var arr = [];
-    var sum = 0;
+    let arr = [];
+    let sum = 0;
 
-    //    for(var i = num - 1; i > 1; i--){
-    //         if(i % 5 === 0 || i % 3 === 0) {
-    //             arr.push(i);
-    //             console.log("arr:",arr)
-    //         }
-    //     }
-
-    for (var i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) {
         if (i % 5 === 0 || i % 3 === 0) {
             arr.push(i);
             //    console.log("arr:",arr)
@@ -482,16 +495,15 @@ function ThreeFiveMultiples(num) {
         }
     }
 
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         sum = sum + arr[i];
         //   console.log("sum:",sum)
         //   sum: 0
         //   sum: 3
         //   sum: 8
     }
-
+    
     return sum;
-
 }
 console.log(ThreeFiveMultiples(6)); // 8
 console.log(ThreeFiveMultiples(1)); // 0
